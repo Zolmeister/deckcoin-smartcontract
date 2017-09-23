@@ -1,0 +1,13 @@
+{
+  "name": "deck-coin",
+  "description": "Cryptocurrency for trading card game (deck list) intellectual property",
+  "author": "Zolmeister (https://zolmeister.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zolmeister/deckcoin-smartcontract.git"
+  },
+  "dependencies": {
+    "zeppelin-solidity": "^1.2.0"
+  }
+}
