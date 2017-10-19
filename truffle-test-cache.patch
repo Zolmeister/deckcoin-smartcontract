@@ -1,0 +1,6 @@
+209154c209154,209156
+<       temp.mkdir('test-', function(err, temporaryDirectory) {
+---
+>       var temporaryDirectory = require('path').join(temp.dir, 'compiled_test_contracts');
+>       var mkTmpDir = cb=>!fs.existsSync(temporaryDirectory) ? fs.mkdir(temporaryDirectory, cb) : cb()
+>       mkTmpDir(function(err) {

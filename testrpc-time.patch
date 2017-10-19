@@ -1,0 +1,10 @@
+83416c83416,83417
+<       blockNumber: blockNumber
+---
+>       blockNumber: blockNumber,
+> 			timeAdjustment: self.blockchain.timeAdjustment
+83438a83440
+> 	var timeAdjustment = this.snapshots[snapshot_id].timeAdjustment;
+83465a83468,83469
+> 		// The time adjustment is restored to its prior state
+>  		self.blockchain.timeAdjustment = timeAdjustment;

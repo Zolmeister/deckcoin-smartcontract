@@ -3,11 +3,22 @@
   "description": "Cryptocurrency for trading card game (deck list) intellectual property",
   "author": "Zolmeister (https://zolmeister.com)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Zolmeister/deckcoin-smartcontract.git"
+  "repository": "https://github.com/Zolmeister/deckcoin-smartcontract.git",
+  "scripts": {
+    "dev": "testrpc --account=\",3000000000000000000000\" --account=\",90000000000000000000\" --account=\",90000000000000000000\" --account=\",90000000000000000000\"",
+    "test": "truffle test",
+    "patch": "patch node_modules/truffle/build/cli.bundled.js truffle-test-cache.patch && patch node_modules/ethereumjs-testrpc/build/cli.node.js testrpc-time.patch",
+    "dist": "mkdir -p dist && echo \"var compiled=`solc --optimize --combined-json abi,bin,interface zeppelin-solidity=$(pwd)/node_modules/zeppelin-solidity contracts/DeckCoinCrowdsale.sol`\" > dist/compiled.js"
   },
   "dependencies": {
-    "zeppelin-solidity": "^1.2.0"
+    "ethereumjs-testrpc": "^4.1.3",
+    "truffle": "^3.4.11",
+    "zeppelin-solidity": "^1.3.0"
+  },
+  "devDependencies": {
+    "big-integer": "^1.6.25",
+    "ethereumjs-abi": "^0.6.4",
+    "keccak": "^1.3.0",
+    "lodash": "^4.17.4"
   }
 }

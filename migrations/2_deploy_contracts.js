@@ -1,5 +1,7 @@
-var DEKCoin = artifacts.require("./v0.2/DEKCoin.sol");
+var DeckCoin = artifacts.require("./DeckCoin.sol");
+var DeckCoinCrowdsale = artifacts.require("./DeckCoinCrowdsale.sol");
 
 module.exports = function(deployer) {
-    deployer.deploy(DEKCoin);
+  deployer.deploy(DeckCoin)
+  deployer.deploy(DeckCoinCrowdsale)
 };
