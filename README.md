@@ -14,10 +14,9 @@ web3.eth.sendTransaction({
   value: web3.toWei(1, 'ether'),
   to: '0xcb7f070fDA083E8e5f40559376c360f0709e985C',
   gas: 200000,
-  gasPrice: web3.toWei(1, 'gwei') // http://ethgasstation.info
+  gasPrice: web3.toWei(0.1, 'gwei') // http://ethgasstation.info
 })
 ```
-
 ### DeckCoin Contract
 
 Coin Address: [`0x15E5c9aA71b8154806038AefC587CfE19B0BC5d6`](https://etherscan.io/address/0x15e5c9aa71b8154806038aefc587cfe19b0bc5d6#readContract)
@@ -55,6 +54,7 @@ sale = Sale.at(deployment.address)
 date = Date.UTC(2017, 9, 24, 6) + 1000 * 60
 web3.currentProvider.send({jsonrpc: "2.0", method: "evm_increaseTime", params: [Math.floor((new Date(date) - web3.eth.getBlock(web3.eth.blockNumber).timestamp * 1000) / 1000)], id: 0})
 web3.currentProvider.send({jsonrpc: "2.0", method: "evm_mine", params: [], id: 0})
+web3.eth.estimateGas({to: sale.address, from: eth.accounts[0], value: web3.toWei(1, 'ether')})
 sale.address
 
 eth.getTransactionReceipt(web3.eth.sendTransaction({from: eth.accounts[0], to: sale.address, value: web3.toWei(1, 'ether'), gas: 200000}))
