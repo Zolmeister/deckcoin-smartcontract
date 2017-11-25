@@ -1,5 +1,15 @@
 # DeckCoin Smart Contract
 
+The DeckCoin Sale has ended. If you bought DEK during the sale, you can re-claim your ethereum via the `claimRefund()` method on the contract.
+
+### Refund
+
+```js
+abi = '[{"constant":false,"inputs":[],"name":"claimRefund","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]'
+sale = eth.contract(JSON.parse(abi)).at('0xcb7f070fDA083E8e5f40559376c360f0709e985C')
+sale.claimRefund({from: eth.accounts[0], gasPrice: web3.toWei(0.005, "GWei")})
+```
+
 ### Buy DeckCoin at Crowdsale
 
 Crowdsale Address: [`0xcb7f070fDA083E8e5f40559376c360f0709e985C`](https://etherscan.io/address/0xcb7f070fda083e8e5f40559376c360f0709e985c#readContract)  
